@@ -1,0 +1,18 @@
+# DEV MODE
+# Reasonable image resolution and training settings.
+name: "dev"
+model:
+  encoder: "vit_small"
+  image_size: 224
+  batch_size: 16
+  epochs: 10
+training:
+  learning_rate: 0.0001
+  device: "auto"
+data:
+  split_strategy: "patient"
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+evaluation:
+  metrics: ["auroc", "auprc", "f1", "mse", "ssim"]

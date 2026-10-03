@@ -1,0 +1,18 @@
+# RESEARCH MODE
+# Full configured training.
+name: "research"
+model:
+  encoder: "vit_base"
+  image_size: 512
+  batch_size: 32
+  epochs: 100
+training:
+  learning_rate: 0.00005
+  device: "auto"
+data:
+  split_strategy: "patient"
+  train_ratio: 0.8
+  val_ratio: 0.1
+  test_ratio: 0.1
+evaluation:
+  metrics: ["auroc", "auprc", "f1", "mse", "ssim", "latent_dist", "ood_score"]
