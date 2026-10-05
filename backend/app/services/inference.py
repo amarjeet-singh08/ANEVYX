@@ -237,7 +237,7 @@ class InferenceService:
             },
             "ood": {
                 "status": ood["status"].replace("_", " ").upper(),
-                "score": float(ood["score"]) if ood["score"] is not None else None,
+                "score": float(ood["score"]) if ood.get("score") is not None else None,
                 "threshold": float(ood.get("threshold", 15.0))
             },
             "reconstruction": {
